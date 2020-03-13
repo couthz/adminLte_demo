@@ -12,7 +12,7 @@ public class ProductInfo {
   private Date departureTime;
   private double productPrice;
   private String productDesc;
-  private long productStatus;
+  private Long productStatus;
 
 
   public long getId() {
@@ -78,11 +78,11 @@ public class ProductInfo {
   }
 
 
-  public long getProductStatus() {
+  public Long getProductStatus() {
     return productStatus;
   }
 
-  public void setProductStatus(long productStatus) {
+  public void setProductStatus(Long productStatus) {
     this.productStatus = productStatus;
   }
 

@@ -24,7 +24,6 @@
         <mybatis.version>3.4.5</mybatis.version>
         <spring.security.version>5.0.1.RELEASE</spring.security.version>
     </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -104,7 +103,12 @@
             <groupId>jstl</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
-        </dependency> <!-- log start -->
+        </dependency>
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>1.1.2</version>
+        </dependency><!-- log start -->
 
         <dependency>
             <groupId>log4j</groupId>
