@@ -4,4 +4,10 @@
     <select id="findAll" resultType="com.zhc.admin.model.ProductInfo">
         select * from product_info
     </select>
+
+    <insert id="save" parameterType="com.zhc.admin.model.ProductInfo">
+        insert into
+        product_info(productNum, productName, cityName, departureTime, productPrice, productDesc, productStatus)
+        values (#{productNum}, #{productName}, #{cityName}, #{departureTime}, #{productPrice}, #{productDesc}, #{productStatus})
+    </insert>
 </mapper>

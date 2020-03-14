@@ -11,4 +11,6 @@ import java.util.List;
 public interface ProductDao {
 
     List<ProductInfo> findAll() throws Exception;
+
+    void save(ProductInfo productInfo);
 }

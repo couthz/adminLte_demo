@@ -1,6 +1,8 @@
 package com.zhc.admin.model;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class ProductInfo {
