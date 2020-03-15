@@ -304,193 +304,193 @@ public class TravellerInfoExample {
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumIsNull() {
+        public Criteria andPhoneNumIsNull() {
             addCriterion("phoneNum is null");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumIsNotNull() {
+        public Criteria andPhoneNumIsNotNull() {
             addCriterion("phoneNum is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumEqualTo(String value) {
-            addCriterion("phoneNum =", value, "phonenum");
+        public Criteria andPhoneNumEqualTo(String value) {
+            addCriterion("phoneNum =", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumNotEqualTo(String value) {
-            addCriterion("phoneNum <>", value, "phonenum");
+        public Criteria andPhoneNumNotEqualTo(String value) {
+            addCriterion("phoneNum <>", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumGreaterThan(String value) {
-            addCriterion("phoneNum >", value, "phonenum");
+        public Criteria andPhoneNumGreaterThan(String value) {
+            addCriterion("phoneNum >", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumGreaterThanOrEqualTo(String value) {
-            addCriterion("phoneNum >=", value, "phonenum");
+        public Criteria andPhoneNumGreaterThanOrEqualTo(String value) {
+            addCriterion("phoneNum >=", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumLessThan(String value) {
-            addCriterion("phoneNum <", value, "phonenum");
+        public Criteria andPhoneNumLessThan(String value) {
+            addCriterion("phoneNum <", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumLessThanOrEqualTo(String value) {
-            addCriterion("phoneNum <=", value, "phonenum");
+        public Criteria andPhoneNumLessThanOrEqualTo(String value) {
+            addCriterion("phoneNum <=", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumLike(String value) {
-            addCriterion("phoneNum like", value, "phonenum");
+        public Criteria andPhoneNumLike(String value) {
+            addCriterion("phoneNum like", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumNotLike(String value) {
-            addCriterion("phoneNum not like", value, "phonenum");
+        public Criteria andPhoneNumNotLike(String value) {
+            addCriterion("phoneNum not like", value, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumIn(List<String> values) {
-            addCriterion("phoneNum in", values, "phonenum");
+        public Criteria andPhoneNumIn(List<String> values) {
+            addCriterion("phoneNum in", values, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumNotIn(List<String> values) {
-            addCriterion("phoneNum not in", values, "phonenum");
+        public Criteria andPhoneNumNotIn(List<String> values) {
+            addCriterion("phoneNum not in", values, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumBetween(String value1, String value2) {
-            addCriterion("phoneNum between", value1, value2, "phonenum");
+        public Criteria andPhoneNumBetween(String value1, String value2) {
+            addCriterion("phoneNum between", value1, value2, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andPhonenumNotBetween(String value1, String value2) {
-            addCriterion("phoneNum not between", value1, value2, "phonenum");
+        public Criteria andPhoneNumNotBetween(String value1, String value2) {
+            addCriterion("phoneNum not between", value1, value2, "phoneNum");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeIsNull() {
+        public Criteria andCredentialsTypeIsNull() {
             addCriterion("credentialsType is null");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeIsNotNull() {
+        public Criteria andCredentialsTypeIsNotNull() {
             addCriterion("credentialsType is not null");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeEqualTo(Integer value) {
-            addCriterion("credentialsType =", value, "credentialstype");
+        public Criteria andCredentialsTypeEqualTo(Integer value) {
+            addCriterion("credentialsType =", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeNotEqualTo(Integer value) {
-            addCriterion("credentialsType <>", value, "credentialstype");
+        public Criteria andCredentialsTypeNotEqualTo(Integer value) {
+            addCriterion("credentialsType <>", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeGreaterThan(Integer value) {
-            addCriterion("credentialsType >", value, "credentialstype");
+        public Criteria andCredentialsTypeGreaterThan(Integer value) {
+            addCriterion("credentialsType >", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("credentialsType >=", value, "credentialstype");
+        public Criteria andCredentialsTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("credentialsType >=", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeLessThan(Integer value) {
-            addCriterion("credentialsType <", value, "credentialstype");
+        public Criteria andCredentialsTypeLessThan(Integer value) {
+            addCriterion("credentialsType <", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeLessThanOrEqualTo(Integer value) {
-            addCriterion("credentialsType <=", value, "credentialstype");
+        public Criteria andCredentialsTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("credentialsType <=", value, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeIn(List<Integer> values) {
-            addCriterion("credentialsType in", values, "credentialstype");
+        public Criteria andCredentialsTypeIn(List<Integer> values) {
+            addCriterion("credentialsType in", values, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeNotIn(List<Integer> values) {
-            addCriterion("credentialsType not in", values, "credentialstype");
+        public Criteria andCredentialsTypeNotIn(List<Integer> values) {
+            addCriterion("credentialsType not in", values, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeBetween(Integer value1, Integer value2) {
-            addCriterion("credentialsType between", value1, value2, "credentialstype");
+        public Criteria andCredentialsTypeBetween(Integer value1, Integer value2) {
+            addCriterion("credentialsType between", value1, value2, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andCredentialstypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("credentialsType not between", value1, value2, "credentialstype");
+        public Criteria andCredentialsTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("credentialsType not between", value1, value2, "credentialsType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeIsNull() {
+        public Criteria andTravellerTypeIsNull() {
             addCriterion("travellerType is null");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeIsNotNull() {
+        public Criteria andTravellerTypeIsNotNull() {
             addCriterion("travellerType is not null");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeEqualTo(Integer value) {
-            addCriterion("travellerType =", value, "travellertype");
+        public Criteria andTravellerTypeEqualTo(Integer value) {
+            addCriterion("travellerType =", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeNotEqualTo(Integer value) {
-            addCriterion("travellerType <>", value, "travellertype");
+        public Criteria andTravellerTypeNotEqualTo(Integer value) {
+            addCriterion("travellerType <>", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeGreaterThan(Integer value) {
-            addCriterion("travellerType >", value, "travellertype");
+        public Criteria andTravellerTypeGreaterThan(Integer value) {
+            addCriterion("travellerType >", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeGreaterThanOrEqualTo(Integer value) {
-            addCriterion("travellerType >=", value, "travellertype");
+        public Criteria andTravellerTypeGreaterThanOrEqualTo(Integer value) {
+            addCriterion("travellerType >=", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeLessThan(Integer value) {
-            addCriterion("travellerType <", value, "travellertype");
+        public Criteria andTravellerTypeLessThan(Integer value) {
+            addCriterion("travellerType <", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeLessThanOrEqualTo(Integer value) {
-            addCriterion("travellerType <=", value, "travellertype");
+        public Criteria andTravellerTypeLessThanOrEqualTo(Integer value) {
+            addCriterion("travellerType <=", value, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeIn(List<Integer> values) {
-            addCriterion("travellerType in", values, "travellertype");
+        public Criteria andTravellerTypeIn(List<Integer> values) {
+            addCriterion("travellerType in", values, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeNotIn(List<Integer> values) {
-            addCriterion("travellerType not in", values, "travellertype");
+        public Criteria andTravellerTypeNotIn(List<Integer> values) {
+            addCriterion("travellerType not in", values, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeBetween(Integer value1, Integer value2) {
-            addCriterion("travellerType between", value1, value2, "travellertype");
+        public Criteria andTravellerTypeBetween(Integer value1, Integer value2) {
+            addCriterion("travellerType between", value1, value2, "travellerType");
             return (Criteria) this;
         }
 
-        public Criteria andTravellertypeNotBetween(Integer value1, Integer value2) {
-            addCriterion("travellerType not between", value1, value2, "travellertype");
+        public Criteria andTravellerTypeNotBetween(Integer value1, Integer value2) {
+            addCriterion("travellerType not between", value1, value2, "travellerType");
             return (Criteria) this;
         }
     }

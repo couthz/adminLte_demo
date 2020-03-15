@@ -7,11 +7,11 @@ public class TravellerInfo {
 
     private String sex;
 
-    private String phonenum;
+    private String phoneNum;
 
-    private Integer credentialstype;
+    private Integer credentialsType;
 
-    private Integer travellertype;
+    private Integer travellerType;
 
     public Long getId() {
         return id;
@@ -37,27 +37,27 @@ public class TravellerInfo {
         this.sex = sex;
     }
 
-    public String getPhonenum() {
-        return phonenum;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setPhonenum(String phonenum) {
-        this.phonenum = phonenum;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
-    public Integer getCredentialstype() {
-        return credentialstype;
+    public Integer getCredentialsType() {
+        return credentialsType;
     }
 
-    public void setCredentialstype(Integer credentialstype) {
-        this.credentialstype = credentialstype;
+    public void setCredentialsType(Integer credentialsType) {
+        this.credentialsType = credentialsType;
     }
 
-    public Integer getTravellertype() {
-        return travellertype;
+    public Integer getTravellerType() {
+        return travellerType;
     }
 
-    public void setTravellertype(Integer travellertype) {
-        this.travellertype = travellertype;
+    public void setTravellerType(Integer travellerType) {
+        this.travellerType = travellerType;
     }
 }

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.zhc.admin.dao.MemberInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.zhc.admin.model.MemberInfo" >
+<mapper namespace="com.zhc.admin.dao.WeblogMapper" >
+  <resultMap id="BaseResultMap" type="com.zhc.admin.model.Weblog" >
     <id column="id" property="id" jdbcType="BIGINT" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="nickName" property="nickName" jdbcType="VARCHAR" />
-    <result column="phoneNum" property="phoneNum" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="visittime" property="visittime" jdbcType="TIMESTAMP" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="executiontime" property="executiontime" jdbcType="INTEGER" />
+    <result column="method" property="method" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -67,15 +69,15 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, name, nickName, phoneNum, email
+    id, visittime, username, ip, url, executiontime, method
   </sql>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhc.admin.model.MemberInfoExample" >
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhc.admin.model.WeblogExample" >
     select
     <if test="distinct" >
       distinct
     </if>
     <include refid="Base_Column_List" />
-    from member_info
+    from weblog
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
@@ -86,85 +88,105 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
-    from member_info
+    from weblog
     where id = #{id,jdbcType=BIGINT}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from member_info
+    delete from weblog
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <delete id="deleteByExample" parameterType="com.zhc.admin.model.MemberInfoExample" >
-    delete from member_info
+  <delete id="deleteByExample" parameterType="com.zhc.admin.model.WeblogExample" >
+    delete from weblog
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.zhc.admin.model.MemberInfo" >
-    insert into member_info (id, name, nickName, 
-      phoneNum, email)
-    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{nickName,jdbcType=VARCHAR}, 
-      #{phoneNum,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.zhc.admin.model.Weblog" >
+    insert into weblog (id, visittime, username, 
+      ip, url, executiontime, 
+      method)
+    values (#{id,jdbcType=BIGINT}, #{visittime,jdbcType=TIMESTAMP}, #{username,jdbcType=VARCHAR}, 
+      #{ip,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{executiontime,jdbcType=INTEGER}, 
+      #{method,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.zhc.admin.model.MemberInfo" >
-    insert into member_info
+  <insert id="insertSelective" parameterType="com.zhc.admin.model.Weblog" >
+    insert into weblog
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         id,
       </if>
-      <if test="name != null" >
-        name,
+      <if test="visittime != null" >
+        visittime,
       </if>
-      <if test="nickName != null" >
-        nickName,
+      <if test="username != null" >
+        username,
       </if>
-      <if test="phoneNum != null" >
-        phoneNum,
+      <if test="ip != null" >
+        ip,
       </if>
-      <if test="email != null" >
-        email,
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="executiontime != null" >
+        executiontime,
+      </if>
+      <if test="method != null" >
+        method,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         #{id,jdbcType=BIGINT},
       </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
+      <if test="visittime != null" >
+        #{visittime,jdbcType=TIMESTAMP},
       </if>
-      <if test="nickName != null" >
-        #{nickName,jdbcType=VARCHAR},
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
       </if>
-      <if test="phoneNum != null" >
-        #{phoneNum,jdbcType=VARCHAR},
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="executiontime != null" >
+        #{executiontime,jdbcType=INTEGER},
+      </if>
+      <if test="method != null" >
+        #{method,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.zhc.admin.model.MemberInfoExample" resultType="java.lang.Integer" >
-    select count(*) from member_info
+  <select id="countByExample" parameterType="com.zhc.admin.model.WeblogExample" resultType="java.lang.Integer" >
+    select count(*) from weblog
     <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
   <update id="updateByExampleSelective" parameterType="map" >
-    update member_info
+    update weblog
     <set >
       <if test="record.id != null" >
         id = #{record.id,jdbcType=BIGINT},
       </if>
-      <if test="record.name != null" >
-        name = #{record.name,jdbcType=VARCHAR},
+      <if test="record.visittime != null" >
+        visittime = #{record.visittime,jdbcType=TIMESTAMP},
       </if>
-      <if test="record.nickName != null" >
-        nickName = #{record.nickName,jdbcType=VARCHAR},
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
       </if>
-      <if test="record.phoneNum != null" >
-        phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
+      <if test="record.ip != null" >
+        ip = #{record.ip,jdbcType=VARCHAR},
       </if>
-      <if test="record.email != null" >
-        email = #{record.email,jdbcType=VARCHAR},
+      <if test="record.url != null" >
+        url = #{record.url,jdbcType=VARCHAR},
+      </if>
+      <if test="record.executiontime != null" >
+        executiontime = #{record.executiontime,jdbcType=INTEGER},
+      </if>
+      <if test="record.method != null" >
+        method = #{record.method,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -172,40 +194,50 @@
     </if>
   </update>
   <update id="updateByExample" parameterType="map" >
-    update member_info
+    update weblog
     set id = #{record.id,jdbcType=BIGINT},
-      name = #{record.name,jdbcType=VARCHAR},
-      nickName = #{record.nickName,jdbcType=VARCHAR},
-      phoneNum = #{record.phoneNum,jdbcType=VARCHAR},
-      email = #{record.email,jdbcType=VARCHAR}
+      visittime = #{record.visittime,jdbcType=TIMESTAMP},
+      username = #{record.username,jdbcType=VARCHAR},
+      ip = #{record.ip,jdbcType=VARCHAR},
+      url = #{record.url,jdbcType=VARCHAR},
+      executiontime = #{record.executiontime,jdbcType=INTEGER},
+      method = #{record.method,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.zhc.admin.model.MemberInfo" >
-    update member_info
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhc.admin.model.Weblog" >
+    update weblog
     <set >
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
+      <if test="visittime != null" >
+        visittime = #{visittime,jdbcType=TIMESTAMP},
       </if>
-      <if test="nickName != null" >
-        nickName = #{nickName,jdbcType=VARCHAR},
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
       </if>
-      <if test="phoneNum != null" >
-        phoneNum = #{phoneNum,jdbcType=VARCHAR},
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
       </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="executiontime != null" >
+        executiontime = #{executiontime,jdbcType=INTEGER},
+      </if>
+      <if test="method != null" >
+        method = #{method,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.zhc.admin.model.MemberInfo" >
-    update member_info
-    set name = #{name,jdbcType=VARCHAR},
-      nickName = #{nickName,jdbcType=VARCHAR},
-      phoneNum = #{phoneNum,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR}
+  <update id="updateByPrimaryKey" parameterType="com.zhc.admin.model.Weblog" >
+    update weblog
+    set visittime = #{visittime,jdbcType=TIMESTAMP},
+      username = #{username,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      executiontime = #{executiontime,jdbcType=INTEGER},
+      method = #{method,jdbcType=VARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
 </mapper>

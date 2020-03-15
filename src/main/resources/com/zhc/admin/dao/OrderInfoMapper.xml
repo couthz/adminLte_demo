@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhc.admin.dao.OrderInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.zhc.admin.model.OrderInfo" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="orderNum" property="orderNum" jdbcType="VARCHAR" />
+    <result column="orderTime" property="orderTime" jdbcType="TIMESTAMP" />
+    <result column="peopleCount" property="peopleCount" jdbcType="INTEGER" />
+    <result column="orderDesc" property="orderDesc" jdbcType="VARCHAR" />
+    <result column="payType" property="payType" jdbcType="INTEGER" />
+    <result column="orderStatus" property="orderStatus" jdbcType="INTEGER" />
+    <result column="productId" property="productId" jdbcType="INTEGER" />
+    <result column="memberId" property="memberId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, orderNum, orderTime, peopleCount, orderDesc, payType, orderStatus, productId, 
+    memberId
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.zhc.admin.model.OrderInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from order_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from order_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.zhc.admin.model.OrderInfoExample" >
+    delete from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.zhc.admin.model.OrderInfo" >
+    insert into order_info (id, orderNum, orderTime, 
+      peopleCount, orderDesc, payType, 
+      orderStatus, productId, memberId
+      )
+    values (#{id,jdbcType=BIGINT}, #{orderNum,jdbcType=VARCHAR}, #{orderTime,jdbcType=TIMESTAMP}, 
+      #{peopleCount,jdbcType=INTEGER}, #{orderDesc,jdbcType=VARCHAR}, #{payType,jdbcType=INTEGER}, 
+      #{orderStatus,jdbcType=INTEGER}, #{productId,jdbcType=INTEGER}, #{memberId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.zhc.admin.model.OrderInfo" >
+    insert into order_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="orderNum != null" >
+        orderNum,
+      </if>
+      <if test="orderTime != null" >
+        orderTime,
+      </if>
+      <if test="peopleCount != null" >
+        peopleCount,
+      </if>
+      <if test="orderDesc != null" >
+        orderDesc,
+      </if>
+      <if test="payType != null" >
+        payType,
+      </if>
+      <if test="orderStatus != null" >
+        orderStatus,
+      </if>
+      <if test="productId != null" >
+        productId,
+      </if>
+      <if test="memberId != null" >
+        memberId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="orderNum != null" >
+        #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="peopleCount != null" >
+        #{peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="orderDesc != null" >
+        #{orderDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null" >
+        #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null" >
+        #{memberId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.zhc.admin.model.OrderInfoExample" resultType="java.lang.Integer" >
+    select count(*) from order_info
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update order_info
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.orderNum != null" >
+        orderNum = #{record.orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orderTime != null" >
+        orderTime = #{record.orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.peopleCount != null" >
+        peopleCount = #{record.peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderDesc != null" >
+        orderDesc = #{record.orderDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.payType != null" >
+        payType = #{record.payType,jdbcType=INTEGER},
+      </if>
+      <if test="record.orderStatus != null" >
+        orderStatus = #{record.orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="record.productId != null" >
+        productId = #{record.productId,jdbcType=INTEGER},
+      </if>
+      <if test="record.memberId != null" >
+        memberId = #{record.memberId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update order_info
+    set id = #{record.id,jdbcType=BIGINT},
+      orderNum = #{record.orderNum,jdbcType=VARCHAR},
+      orderTime = #{record.orderTime,jdbcType=TIMESTAMP},
+      peopleCount = #{record.peopleCount,jdbcType=INTEGER},
+      orderDesc = #{record.orderDesc,jdbcType=VARCHAR},
+      payType = #{record.payType,jdbcType=INTEGER},
+      orderStatus = #{record.orderStatus,jdbcType=INTEGER},
+      productId = #{record.productId,jdbcType=INTEGER},
+      memberId = #{record.memberId,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhc.admin.model.OrderInfo" >
+    update order_info
+    <set >
+      <if test="orderNum != null" >
+        orderNum = #{orderNum,jdbcType=VARCHAR},
+      </if>
+      <if test="orderTime != null" >
+        orderTime = #{orderTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="peopleCount != null" >
+        peopleCount = #{peopleCount,jdbcType=INTEGER},
+      </if>
+      <if test="orderDesc != null" >
+        orderDesc = #{orderDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="payType != null" >
+        payType = #{payType,jdbcType=INTEGER},
+      </if>
+      <if test="orderStatus != null" >
+        orderStatus = #{orderStatus,jdbcType=INTEGER},
+      </if>
+      <if test="productId != null" >
+        productId = #{productId,jdbcType=INTEGER},
+      </if>
+      <if test="memberId != null" >
+        memberId = #{memberId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhc.admin.model.OrderInfo" >
+    update order_info
+    set orderNum = #{orderNum,jdbcType=VARCHAR},
+      orderTime = #{orderTime,jdbcType=TIMESTAMP},
+      peopleCount = #{peopleCount,jdbcType=INTEGER},
+      orderDesc = #{orderDesc,jdbcType=VARCHAR},
+      payType = #{payType,jdbcType=INTEGER},
+      orderStatus = #{orderStatus,jdbcType=INTEGER},
+      productId = #{productId,jdbcType=INTEGER},
+      memberId = #{memberId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <resultMap id="orderMap" type="com.zhc.admin.model.OrderInfo">
+    <id property="id" column="oid"></id>
+    <result property="orderNum" column="orderNum"></result>
+    <result property="orderTime" column="orderTime"></result>
+    <result property="orderStatus" column="orderStatus"></result>
+    <association property="productInfo" javaType="com.zhc.admin.model.ProductInfo">
+      <result property="productName" column="productName"></result>
+      <result property="productPrice" column="productPrice"></result>
+    </association>
+  </resultMap>
+
+  <select id="findAll" resultMap="orderMap">
+    select p.*,o.id as oid, orderNum, orderTime, peopleCount, orderDesc, payType, orderStatus from order_info o inner join product_info p on o.productId = p.id
+  </select>
+
+</mapper>

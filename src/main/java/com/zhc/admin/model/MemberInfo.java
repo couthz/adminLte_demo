@@ -5,9 +5,9 @@ public class MemberInfo {
 
     private String name;
 
-    private String nickname;
+    private String nickName;
 
-    private String phonenum;
+    private String phoneNum;
 
     private String email;
 
@@ -27,20 +27,20 @@ public class MemberInfo {
         this.name = name;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getPhonenum() {
-        return phonenum;
+    public String getPhoneNum() {
+        return phoneNum;
     }
 
-    public void setPhonenum(String phonenum) {
-        this.phonenum = phonenum;
+    public void setPhoneNum(String phoneNum) {
+        this.phoneNum = phoneNum;
     }
 
     public String getEmail() {
